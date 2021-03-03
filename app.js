@@ -23,5 +23,5 @@ app.use('/test', async (req,res) => {
     });
 })
 app.use('/home',(req,res) => { res.sendFile(path.join(__dirname+'/src/html/index.html')); })
-app.use('/', (req, res) => { res.send("this is the API v1.0.0"); })
+app.use('/', (req, res) => { res.send(`this is the API v1.0.0 and if you make a post to /test you will make a request to ${process.env.URL}`); })
 app.listen(port, () => { console.log(`Server listening on port ${port}`); })
